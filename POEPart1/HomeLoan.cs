@@ -8,13 +8,14 @@ namespace POEPart1
 {
     internal class HomeLoan
     {
-        double purchasePrice;
-        double totalDeposit;
-        double interest;
-        int monthsRepay;
-        double principleAmount;
-        double totalOutstanding;
-        double homeLoanRepayments;
+        private double purchasePrice;
+        private double totalDeposit;
+        private double interest;
+        private int monthsRepay;
+        private double principleAmount;
+        private double totalOutstanding;
+       private  double homeLoanRepayments;
+
 
         public void getHomeLoan()
         {

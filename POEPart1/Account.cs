@@ -12,19 +12,31 @@ namespace POEPart1
     internal class Account : Expenses
     {
 
+        private double grossMonthlyIncome;
         private double accountBalance;
 
-        public int housing;
+        private int housing;
         //public double rental;
 
-        public HomeLoan hl = new HomeLoan();
+         HomeLoan hl = new HomeLoan();
         public delegate void homeLoanDelegate();
         public delegate double getRentalDelegate();
 
 
+        public double getIncome()
+        {
+
+            Console.Write("Enter Gross monthly income(before taxes): R ");
+            grossMonthlyIncome = Convert.ToDouble(Console.ReadLine());
+
+            increaseBalance(grossMonthlyIncome);
+
+            return grossMonthlyIncome;
+        }
+
         public void GetHousing()
         {
-            GetInput();
+            //GetInput();
 
             Rent r = new Rent();
             //getRentalDelegate gr = new getRentalDelegate();
@@ -47,22 +59,18 @@ namespace POEPart1
             }
             else if (housing == 2)
             {
-                hl.getHomeLoan();
+                //hl.getHomeLoan();
+                Console.WriteLine("jhgjk");
             }
             else
             {
                 Console.WriteLine("Invalid input");
 
-                GetHousing();
+                //GetHousing();
             }
 
         }
 
-        //public void GetRental()
-        //{
-        //    Console.Write("\nPlease enter monthly rental amount: ");
-        //    rental = Convert.ToDouble(Console.ReadLine());
-        //}
 
         public void reduceBalance(double reduction)
         {
@@ -75,11 +83,17 @@ namespace POEPart1
             accountBalance += increase;
         }
 
-        public void checkApprovalLikeliness(double gmi) {
+        public void checkApprovalLikeliness(double gmi)
+        {
             if ((gmi / 3) < hl.calcMonthlyLoanRepayment())
             {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+                Console.WriteLine("\nALERT: The approval of this home loan is unlikely");
+
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
     }
