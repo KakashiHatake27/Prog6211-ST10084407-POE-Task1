@@ -40,7 +40,7 @@ namespace POEPart1
 
             };
 
-            scd.Invoke(5);
+            scd.Invoke(1);
             acc.GetInput();
 
 
