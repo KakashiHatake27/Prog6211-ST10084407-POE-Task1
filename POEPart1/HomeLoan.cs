@@ -14,7 +14,7 @@ namespace POEPart1
         private int monthsRepay;
         private double principleAmount;
         private double totalOutstanding;
-       private  double homeLoanRepayments;
+        private double homeLoanRepayments;
 
 
         public void getHomeLoan()
@@ -22,27 +22,28 @@ namespace POEPart1
             Console.WriteLine("\n-------------------------------------------\n");
             Console.WriteLine("Please enter the following details for a home loan: ");
 
-            Console.Write("\nPurchase price of property: ");
+            Console.Write("\nPurchase price of property: R ");
             purchasePrice = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Total Deposit: ");
+            Console.Write("Total Deposit: R ");
             totalDeposit = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Interest rate (in percentage %): ");
             interest = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Nnumber of months to complete payment: ");
+            Console.Write("Number of months to complete payment: ");
             monthsRepay = Int32.Parse(Console.ReadLine());
 
             calcMonthlyLoanRepayment();
         }
 
-        public double calcMonthlyLoanRepayment() {
+        public double calcMonthlyLoanRepayment()
+        {
 
             principleAmount = purchasePrice - totalDeposit;
             interest = interest / 100;
             int years = monthsRepay / 12;
-            
+
             totalOutstanding = principleAmount * (1 + (interest * years));
 
             homeLoanRepayments = totalOutstanding / monthsRepay;

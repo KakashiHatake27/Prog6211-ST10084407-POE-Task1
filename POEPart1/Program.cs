@@ -10,6 +10,7 @@ namespace POEPart1
 
 
     public delegate void splashScreenDelegate(int time);
+    public delegate void accountDelegate();
     internal class Program
     {
         static void Main(string[] args)
@@ -21,7 +22,7 @@ namespace POEPart1
                 Console.WriteLine("Loading . . . ");
 
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
 
                 for (int i = time; i > 0; i--)
                 {
@@ -33,15 +34,24 @@ namespace POEPart1
                 Console.WriteLine("\n\n\t==================================================");
                 Console.WriteLine("\t||\tWelcome to your Budget Planner    \t||");
                 Console.WriteLine("\t==================================================\n\n");
-                //Console.ReadLine();
+               
 
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
 
             };
 
+            accountDelegate accd = () => {
+               
+            };
+
             scd.Invoke(1);
+            acc.getIncome();
             acc.GetInput();
+            acc.reduceBalance(acc.calcTotalExpenses());
+            acc.GetHousing();
+            acc.checkApprovalLikeliness(acc.GrossMonthlyIncome);
+            acc.showBalance();
 
 
             Console.ReadLine();

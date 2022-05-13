@@ -15,27 +15,28 @@ namespace POEPart1
         public void GetInput()
         {
             arrExpenses = new double[10];
+            Console.WriteLine("\n EXPENSES:\n-------------------");
 
-             Console.Write("Enter monthly tax deducted: ");
+            Console.Write("Enter estimated monthly tax: ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
-            Console.Write("Enter monthly expense for groceries: R ");
+
+            Console.WriteLine("\nPlease enter monthly estimated cost of the following:");
+
+            Console.Write("Groceries: R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
-            Console.Write("Enter monthly expense for Water and Lights: R ");
+            Console.Write("Water and lights: R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
-            Console.Write("Enter monthly expense for travel costs(including petrol): R ");
+            Console.Write("Travel costs(including fuel): R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
-            Console.Write("Enter monthly expense for Cell phone and Telephone: R ");
+            Console.Write("Cell phone and Telephone: R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
-            Console.Write("Enter any other miscellanous expenses: R ");
+            Console.Write("Any other miscellanous expenses: R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
-
-            calcTotalExpenses();
-
         }
 
         public void addExpense(double exp)
@@ -53,14 +54,11 @@ namespace POEPart1
                 totalExpenses = totalExpenses + arrExpenses[i];
             }
 
-            //reduceBalance(totalExpenses);
 
             return totalExpenses;
         }
 
        
-
-
     }
 
 

@@ -15,16 +15,43 @@ namespace POEPart1
         private double grossMonthlyIncome;
         private double accountBalance;
 
-        private int housing;
-        //public double rental;
+        public double AccountBalance { get => accountBalance; set => accountBalance = value; }
+        public double GrossMonthlyIncome { get => grossMonthlyIncome; set => grossMonthlyIncome = value; }
 
-         HomeLoan hl = new HomeLoan();
+        private int housing;
+
+        HomeLoan hl = new HomeLoan();
+
+
         public delegate void homeLoanDelegate();
         public delegate double getRentalDelegate();
 
+        public void showBalance()
+        {
+            Console.WriteLine("\n\n=======================================");
+            Console.Write("Available balance: ");
+            if (accountBalance < 0)
+            {
+
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(accountBalance);
+            }
+            else
+            {
+
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(accountBalance);
+
+            }
+
+            }
 
         public double getIncome()
         {
+
+            Console.WriteLine("\n INCOME AND TAX:\n-------------------");
 
             Console.Write("Enter Gross monthly income(before taxes): R ");
             grossMonthlyIncome = Convert.ToDouble(Console.ReadLine());
@@ -36,37 +63,39 @@ namespace POEPart1
 
         public void GetHousing()
         {
-            //GetInput();
+            getRentalDelegate grd = () =>
+            {
+                double rental;
+                Console.Write("\nPlease enter monthly rental amount: R ");
+                rental = Int32.Parse(Console.ReadLine());
+                return rental;
+            };
 
-            Rent r = new Rent();
-            //getRentalDelegate gr = new getRentalDelegate();
+            Console.WriteLine("\n ACCOMMODATION:\n-------------------");
 
-            Console.WriteLine("Please enter number to select your accommodation\n\t[1] Renting\n\t[2] Buying a property");
-            Console.Write("-->");
+            Console.WriteLine("\nPlease enter number to select your accommodation\n\t[1] Renting\n\t[2] Buying a property");
+            Console.Write(" --> ");
             housing = Int32.Parse(Console.ReadLine());
 
             if (housing == 1)
             {
-                //r.GetRental();
-
-                getRentalDelegate grd = () =>
-                {
-                    double rental;
-                    Console.Write("\nPlease enter monthly rental amount: ");
-                    rental = Int32.Parse(Console.ReadLine());
-                    return rental;
-                };
+                grd.Invoke();
             }
             else if (housing == 2)
             {
-                //hl.getHomeLoan();
-                Console.WriteLine("jhgjk");
+                hl.getHomeLoan();
             }
             else
             {
-                Console.WriteLine("Invalid input");
 
-                //GetHousing();
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Red;
+                
+                Console.WriteLine("Invalid input, Please try again.\n");
+
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                GetHousing();
             }
 
         }
@@ -79,7 +108,6 @@ namespace POEPart1
 
         public void increaseBalance(double increase)
         {
-
             accountBalance += increase;
         }
 
@@ -87,7 +115,7 @@ namespace POEPart1
         {
             if ((gmi / 3) < hl.calcMonthlyLoanRepayment())
             {
-                Console.BackgroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
 
                 Console.WriteLine("\nALERT: The approval of this home loan is unlikely");
