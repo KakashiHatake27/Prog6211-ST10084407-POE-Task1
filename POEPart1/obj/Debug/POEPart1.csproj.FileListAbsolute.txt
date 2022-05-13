@@ -1,0 +1,8 @@
+C:\Users\kakas\source\repos\POEPart1\POEPart1\bin\Debug\POEPart1.exe.config
+C:\Users\kakas\source\repos\POEPart1\POEPart1\bin\Debug\POEPart1.exe
+C:\Users\kakas\source\repos\POEPart1\POEPart1\bin\Debug\POEPart1.pdb
+C:\Users\kakas\source\repos\POEPart1\POEPart1\obj\Debug\POEPart1.csproj.AssemblyReference.cache
+C:\Users\kakas\source\repos\POEPart1\POEPart1\obj\Debug\POEPart1.csproj.SuggestedBindingRedirects.cache
+C:\Users\kakas\source\repos\POEPart1\POEPart1\obj\Debug\POEPart1.csproj.CoreCompileInputs.cache
+C:\Users\kakas\source\repos\POEPart1\POEPart1\obj\Debug\POEPart1.exe
+C:\Users\kakas\source\repos\POEPart1\POEPart1\obj\Debug\POEPart1.pdb
