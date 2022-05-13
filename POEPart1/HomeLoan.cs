@@ -38,7 +38,7 @@ namespace POEPart1
             Console.Write("Interest rate (in percentage %): ");
             interest = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Number of months to complete payment: ");
+            Console.Write("Number of months to complete payment(240 - 360): ");
             monthsRepay = Int32.Parse(Console.ReadLine());
 
             /* Calling the function to calculate the monthly loan repayment. */
