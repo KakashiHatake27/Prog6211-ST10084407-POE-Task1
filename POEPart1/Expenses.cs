@@ -12,17 +12,29 @@ namespace POEPart1
 
         private int counter = 0;
 
+
+        /// It gets the user's input and stores it in an array
+
         public void GetInput()
         {
+            /* Creating an array of 10 elements. */
             arrExpenses = new double[10];
+
+
+            /* Printing the heading for expeneses. */
             Console.WriteLine("\n EXPENSES:\n-------------------");
 
+            /* Asking the user to enter the estimated monthly tax and then it is converting it to a
+            double and then it is adding it to the array. */
             Console.Write("Enter estimated monthly tax: ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
 
+            /* Printing the text "Please enter monthly estimated cost of the following:" on the console. */
             Console.WriteLine("\nPlease enter monthly estimated cost of the following:");
 
+            /* Asking the user to enter the estimated monthly expenses of the items and then it is converting it to a
+                        double and then it is adding it to the array. */
             Console.Write("Groceries: R ");
             addExpense(Convert.ToDouble(Console.ReadLine()));
 
@@ -39,6 +51,9 @@ namespace POEPart1
             addExpense(Convert.ToDouble(Console.ReadLine()));
         }
 
+
+        /// It adds an expense to the array.
+
         public void addExpense(double exp)
         {
 
@@ -46,6 +61,11 @@ namespace POEPart1
             counter++;
         }
 
+
+        /// This function calculates the total expenses of the company by adding all the expenses in the
+        /// array
+        /// returns
+        /// The total expenses.
         public double calcTotalExpenses()
         {
             double totalExpenses = 0;
@@ -58,7 +78,7 @@ namespace POEPart1
             return totalExpenses;
         }
 
-       
+
     }
 
 
